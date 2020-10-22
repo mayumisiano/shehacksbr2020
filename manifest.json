@@ -1,0 +1,27 @@
+{
+"manifest_version": 2,
+    "name": "Redescansa",
+    "description": "Bloqueie conteúdos sensíveis",
+    "version": "1.0",
+
+    "web_accessible_resources" : [
+        "images/3.png"
+        ],
+
+        "browser_action" : {
+        "default_icon" : "icon48.png"
+        },
+
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*/*", "<all_urls>"
+            ],
+            "all_frames": true,
+            "js": [
+                "content.js"
+            ],
+            "run_at": "document_end"
+        }
+    ]
+}
